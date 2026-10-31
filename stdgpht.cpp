@@ -5,7 +5,6 @@
 using namespace std;
 using namespace __gnu_pbds;
 struct hd {
-    // #define _HASH_FN_PURE [[gnu::pure]]
     [[gnu::pure]] size_t operator()(uint64_t h) const noexcept {
         h *= 0x9E3779B97F4A7C15ULL;
         h ^= h >> 33;
@@ -53,11 +52,11 @@ struct hd {
         return operator()(x);
     }
 };
-//Usage: gpht<Ty_, Tu_[, Hash_Fn = hd]>
+// Usage: gpht<Ty_, Tu_[, Hash_Fn = hd]>
 //
-//Type alias for gp_hash_table with an optimized hash functor
+// Type alias for gp_hash_table with an optimized hash functor
 //
-//Non-standard key types require a specialized hash function
+// Non-standard key types require a specialized hash function
 template <typename Ty_, typename Tu_, typename Hash_Fn = hd>
 using gpht = gp_hash_table<Ty_, Tu_, Hash_Fn, equal_to<Ty_>,
                            direct_mask_range_hashing<>, linear_probe_fn<>>;
