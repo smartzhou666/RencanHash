@@ -1,0 +1,2 @@
+# HashRencan
+High-quality Hash
