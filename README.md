@@ -12,7 +12,7 @@ gpht<Key_, Val_, Hash_Fn>
 作为 ```gp_hash_table``` 的别名。
 
 其中，```Key_``` 为键的类型，```Val_``` 为值的类型，```Hash_Fn```（可选，默认为内置 ```hd```）为哈希函数，需要保证 ```Hash_Fn``` 重载了 ```operator()```。 \
-当 ```Key_``` 为非内置类型时，需要给出第三个参数 ```Hash_Fn``` 并保证 ```Key_``` 重载了 ```operator==```，否则会编译失败。
+> ⚠️注意：当 ```Key_``` 为非内置类型时，需要给出第三个参数 ```Hash_Fn``` 并保证 ```Key_``` 重载了 ```operator==```，否则会编译失败。
 ### 前置库（已包含于库文件中）
 - ```<bits/stdc++.h>```
 - ```<ext/pb_ds/assoc_container.hpp>```
