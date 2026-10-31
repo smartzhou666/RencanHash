@@ -17,3 +17,6 @@ gpht<Key_, Val_, Hash_Fn>
 - ```<bits/stdc++.h>```
 - ```<ext/pb_ds/assoc_container.hpp>```
 - ```<ext/pb_ds/hash_policy.hpp>```
+### 环境需求
+- GNU C++14 or later （建议 GNU C++17）
+- 链接 ```libstdc++``` 并启用 ```pbds``` 扩展库
