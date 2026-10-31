@@ -57,25 +57,6 @@ struct hd {
 // Type alias for gp_hash_table with an optimized hash functor
 //
 // Non-standard key types require a specialized hash function
-template <typename Ty_, typename Tu_, typename Hash_Fn = hd>
-using gpht = gp_hash_table<Ty_, Tu_, Hash_Fn, equal_to<Ty_>,
+template <typename Key_, typename Val_, typename Hash_Fn = hd>
+using gpht = gp_hash_table<Key_, Val_, Hash_Fn, equal_to<Ty_>,
                            direct_mask_range_hashing<>, linear_probe_fn<>>;
-
-#if __INCLUDE_LEVEL__ == 0
-int main() {
-    // example
-    cin.tie(0)->sync_with_stdio(false);
-    gpht<string, int> hsi;
-    string s, pos;
-    int n, T, x;
-    cin >> n >> T;
-    while (T--) {
-        cin >> s >> x;
-        hsi[s] = x;
-    }
-    while (n--) {
-        cin >> pos;
-        cout << hsi[pos] << ' ';
-    }
-}
-#endif
